@@ -1,18 +1,131 @@
 {
   "usuarios": [
     {
-      "id": "187cb7e5-e097-4224-8bc7-b610c855e2b1",
+      "id": "187cb7e5-e907-4224-8bc7-b6108c5e52b1",
       "login": "admin",
       "senha": "123",
       "nome": "Administrador do Sistema",
       "email": "admin@abc.com"
     },
     {
-      "id": "ec37c83d-4b7f-458d-9e10-3fda7d37cd3e",
+      "id": "ec37c83d-4bf7-458d-9e0b-3fda7d37cd3e",
       "login": "user",
       "senha": "123",
       "nome": "Usuario Comum",
       "email": "user@abc.com"
+    }
+  ],
+
+  "receitas": [
+    {
+      "id": 1,
+      "nome": "Bolo de Chocolate",
+      "categoria": "Doce",
+      "descricao": "Bolo fofinho com cobertura de chocolate.",
+      "tempoPreparo": "40 minutos",
+      "porcoes": 8,
+      "dificuldade": "Fácil",
+      "imagemPrincipal": "assets/img/lasanha.jpg",
+      "destaque": true
+    },
+    {
+      "id": 2,
+      "nome": "Lasanha à Bolonhesa",
+      "categoria": "Massa",
+      "descricao": "Lasanha com molho bolonhesa tradicional.",
+      "tempoPreparo": "1 hora",
+      "porcoes": 6,
+      "dificuldade": "Média",
+      "imagemPrincipal": "assets/img/lasanha.jpg",
+      "destaque": false
+    },
+    {
+      "id": 3,
+      "nome": "Salada Caesar",
+      "categoria": "Salada",
+      "descricao": "Salada leve com molho caseiro.",
+      "tempoPreparo": "20 minutos",
+      "porcoes": 2,
+      "dificuldade": "Fácil",
+      "imagemPrincipal": "assets/img/lasanha.jpg",
+      "destaque": false
+    },
+    {
+      "id": 4,
+      "nome": "Suco de Laranja",
+      "categoria": "Bebida",
+      "descricao": "Suco natural espremido na hora.",
+      "tempoPreparo": "5 minutos",
+      "porcoes": 1,
+      "dificuldade": "Fácil",
+      "imagemPrincipal": "assets/img/lasanha.jpg",
+      "destaque": false
+    },
+    {
+      "id": 5,
+      "nome": "Cookies Caseiros",
+      "categoria": "Doce",
+      "descricao": "Cookies crocantes com gotas de chocolate.",
+      "tempoPreparo": "25 minutos",
+      "porcoes": 12,
+      "dificuldade": "Fácil",
+      "imagemPrincipal": "assets/img/lasanha.jpg",
+      "destaque": false
+    },
+    {
+      "id": 6,
+      "nome": "Macarrão Carbonara",
+      "categoria": "Massa",
+      "descricao": "Receita italiana com ovos e queijo.",
+      "tempoPreparo": "25 minutos",
+      "porcoes": 4,
+      "dificuldade": "Média",
+      "imagemPrincipal": "assets/img/lasanha.jpg",
+      "destaque": true
+    },
+    {
+      "id": 7,
+      "nome": "Torta de Limão",
+      "categoria": "Doce",
+      "descricao": "Torta doce com base crocante e mousse de limão.",
+      "tempoPreparo": "1 hora",
+      "porcoes": 8,
+      "dificuldade": "Média",
+      "imagemPrincipal": "assets/img/lasanha.jpg",
+      "destaque": false
+    },
+    {
+      "id": 8,
+      "nome": "Sanduíche Natural",
+      "categoria": "Lanche",
+      "descricao": "Sanduíche leve com frango e salada.",
+      "tempoPreparo": "10 minutos",
+      "porcoes": 1,
+      "dificuldade": "Fácil",
+      "imagemPrincipal": "assets/img/lasanha.jpg",
+      "destaque": false
+    },
+    {
+      "id": 9,
+      "nome": "Sopa de Legumes",
+      "categoria": "Sopa",
+      "descricao": "Sopa nutritiva com legumes variados.",
+      "tempoPreparo": "45 minutos",
+      "porcoes": 5,
+      "dificuldade": "Fácil",
+      "imagemPrincipal": "assets/img/lasanha.jpg",
+      "destaque": false
+    },
+    {
+      "id": 10,
+      "nome": "Vitamina de Morango",
+      "categoria": "Bebida",
+      "descricao": "Vitamina cremosa feita com frutas naturais.",
+      "tempoPreparo": "5 minutos",
+      "porcoes": 2,
+      "dificuldade": "Fácil",
+      "imagemPrincipal": "assets/img/lasanha.jpg",
+      "destaque": false
     }
   ]
 }
