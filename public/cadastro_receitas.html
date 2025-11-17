@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro de Receita</title>
+
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+  <header class="bg-dark text-white py-3 mb-4">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="h4 mb-0" id="titulo-form">Cadastrar Receita</h1>
+      <a href="index.html" class="btn btn-outline-light btn-sm">Voltar</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <form id="form-receita" class="row g-3 mb-5">
+      <div class="col-md-6">
+        <label for="nome" class="form-label">Nome da receita</label>
+        <input type="text" id="nome" name="nome" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+        <label for="categoria" class="form-label">Categoria</label>
+        <input type="text" id="categoria" name="categoria" class="form-control" required>
+      </div>
+      <div class="col-12">
+        <label for="descricao" class="form-label">Descrição</label>
+        <textarea id="descricao" name="descricao" class="form-control" rows="3"></textarea>
+      </div>
+      <div class="col-md-4">
+        <label for="tempoPreparo" class="form-label">Tempo de preparo</label>
+        <input type="text" id="tempoPreparo" name="tempoPreparo" class="form-control" value="30 minutos">
+      </div>
+      <div class="col-md-4">
+        <label for="porcoes" class="form-label">Porções</label>
+        <input type="number" id="porcoes" name="porcoes" class="form-control" value="1" min="1">
+      </div>
+      <div class="col-md-4">
+        <label for="dificuldade" class="form-label">Dificuldade</label>
+        <input type="text" id="dificuldade" name="dificuldade" class="form-control" value="Fácil">
+      </div>
+      <div class="col-md-8">
+        <label for="imagemPrincipal" class="form-label">Imagem principal (caminho)</label>
+        <input type="text" id="imagemPrincipal" name="imagemPrincipal" class="form-control" value="assets/img/lasanha.jpg">
+      </div>
+      <div class="col-md-4 d-flex align-items-end">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="destaque" name="destaque">
+          <label class="form-check-label" for="destaque">
+            Mostrar em destaque
+          </label>
+        </div>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-success" type="submit">Salvar</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3 mt-auto">
+    <small>&copy; 2025 — Projeto acadêmico (Lucas Silva Borges)</small>
+  </footer>
+
+  <!-- SCRIPT ÚNICO DA PÁGINA: POST + PUT -->
+  <script>
+  (function () {
+    var API_URL = "http://localhost:3000/receitas";
+    var form = document.getElementById("form-receita");
+    var params = new URLSearchParams(window.location.search);
+    var editingId = params.get("id"); // se vier ?id=4 -> é edição
+
+    // SE FOR EDIÇÃO, CARREGA OS DADOS
+    if (editingId) {
+      fetch(API_URL + "/" + editingId)
+        .then(function (r) {
+          if (!r.ok) throw new Error("id não existe no JSON Server");
+          return r.json();
+        })
+        .then(function (data) {
+          document.getElementById("titulo-form").textContent = "Editar Receita";
+          document.getElementById("nome").value = data.nome || "";
+          document.getElementById("categoria").value = data.categoria || "";
+          document.getElementById("descricao").value = data.descricao || "";
+          document.getElementById("tempoPreparo").value = data.tempoPreparo || "";
+          document.getElementById("porcoes").value = data.porcoes || 1;
+          document.getElementById("dificuldade").value = data.dificuldade || "";
+          document.getElementById("imagemPrincipal").value = data.imagemPrincipal || "assets/img/lasanha.jpg";
+          document.getElementById("destaque").checked = !!data.destaque;
+        })
+        .catch(function (err) {
+          console.log("ERRO CARREGAR:", err);
+        });
+    }
+
+    // ENVIA (POST OU PUT)
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var receita = {
+        nome: document.getElementById("nome").value,
+        categoria: document.getElementById("categoria").value,
+        descricao: document.getElementById("descricao").value,
+        tempoPreparo: document.getElementById("tempoPreparo").value,
+        porcoes: Number(document.getElementById("porcoes").value || 1),
+        dificuldade: document.getElementById("dificuldade").value,
+        imagemPrincipal: document.getElementById("imagemPrincipal").value || "assets/img/lasanha.jpg",
+        destaque: document.getElementById("destaque").checked
+      };
+
+      var url = API_URL;
+      var method = "POST";
+
+      // se tiver id na URL -> PUT
+      if (editingId) {
+        url = API_URL + "/" + editingId;
+        method = "PUT";
+      }
+
+      fetch(url, {
+        method: method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(receita)
+      })
+        .then(function (resp) {
+          // NÃO redireciona nem dá alert → fica na página pra você printar
+          console.log("salvo", method, resp.status);
+        })
+        .catch(function () {
+          alert("Erro de conexão com o JSON Server");
+        });
+    });
+  })();
+  </script>
+</body>
+</html>

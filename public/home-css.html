@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Receitas & Sabores — (v1 CSS Puro)</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="v1-header">
+    <div class="v1-container v1-header__wrap">
+      <div class="v1-logo">Receitas & Sabores</div>
+      <nav class="v1-nav">
+        <a href="#inicio">Início</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#dicas">Dicas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio" class="v1-container v1-main">
+    <!-- Seção principal: banner + texto introdutório -->
+    <section class="v1-hero">
+      <div class="v1-hero__image" role="img" aria-label="Mesa com ingredientes de cozinha"></div>
+      <div class="v1-hero__content">
+        <h1>Receitas fáceis e gostosas</h1>
+        <p>
+          Esta é a <strong>versão CSS puro</strong> da home, sem frameworks. 
+          Mostramos responsividade com <em>media queries, grid e flexbox</em>.
+          No desktop você verá <strong>duas colunas</strong> na área “Sobre”; no mobile, vira <strong>uma coluna</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Área responsiva: 2 colunas (desktop) / 1 coluna (mobile) -->
+    <section id="categorias" class="v1-two-col">
+  <div class="col">
+    <h2>Receitas em destaque</h2>
+    <p>
+      Veja algumas opções deliciosas e práticas para o dia a dia:
+    </p>
+    <ul class="v1-list">
+      <li>🍝 Lasanha à bolonhesa com queijo gratinado</li>
+      <li>🥞 Panquecas americanas com mel</li>
+      <li>🍰 Bolo de cenoura com cobertura de chocolate</li>
+      <li>🥗 Saladas leves e refrescantes</li>
+    </ul>
+  </div>
+  <div class="col">
+    <div class="v1-panel">
+      <h3>Dica do dia</h3>
+      <p>
+        Use ingredientes frescos e prepare suas receitas com calma —
+        o sabor é sempre melhor quando feito com atenção e carinho.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Cards (mínimo 3) -->
+    <section id="dicas" class="v1-section">
+      <h2>Cards de Receitas</h2>
+      <div class="v1-cards">
+        <article class="v1-card">
+          <img src="https://picsum.photos/id/1080/600/400" alt="Lasanha gratinada"/>
+          <div class="v1-card__body">
+            <h3>Lasanha à Bolonhesa</h3>
+            <p>Camadas de massa, carne moída e queijo gratinado.</p>
+          </div>
+        </article>
+        <article class="v1-card">
+          <img src="https://picsum.photos/id/1020/600/400" alt="Bolo de cenoura com calda"/>
+          <div class="v1-card__body">
+            <h3>Bolo de Cenoura</h3>
+            <p>Clássico fofinho com cobertura de chocolate.</p>
+          </div>
+        </article>
+        <article class="v1-card">
+          <img src="https://picsum.photos/id/1015/600/400" alt="Panquecas com mel"/>
+          <div class="v1-card__body">
+            <h3>Panqueca Americana</h3>
+            <p>Fofinha e dourada, perfeita para o café da manhã.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  <!-- Rodapé -->
+  <footer class="v1-footer">
+    <div class="v1-container v1-footer__wrap">
+      <small>&copy; 2025 • Projeto acadêmico — Lucas Silva Borges</small>
+      <div class="v1-social">
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="GitHub">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Receitas Deliciosas</title>
+
+  <!-- CSS do projeto -->
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="bg-dark text-white py-3">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between">
+      <h1 class="h3 mb-0">Receitas Deliciosas</h1>
+      <nav class="nav">
+        <a class="nav-link text-white" href="#">Início</a>
+        <a class="nav-link text-white" href="#">Sobre</a>
+        <a class="nav-link text-white btn btn-success btn-sm ms-3" href="cadastro_receitas.html">+ Nova receita</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container my-4">
+    <!-- Seção 1: Destaques -->
+    <section id="destaques" class="mb-5">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="h4 mb-0">🌎 Itens em Destaque</h2>
+      </div>
+
+      <div id="carouselDestaques" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="carousel-content"><!-- JS injeta aqui --></div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestaques" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDestaques" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Seção 2: Cards -->
+    <section id="todos">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="h4 mb-0">🗺️ Todos os itens</h2>
+      </div>
+      <div class="row g-4" id="cards-container"><!-- JS injeta aqui --></div>
+    </section>
+
+    <!-- Seção 3: Informações do aluno -->
+    <section class="mt-5">
+      <h2 class="h5">Informações do(a) Aluno(a)</h2>
+      <div class="border-top pt-3 small">
+        <p><strong>Nome:</strong> Lucas Silva Borges</p>
+        <p><strong>Matrícula:</strong> 1598846</p>
+        <p><strong>Curso:</strong> Desenvolvimento de Interface Web</p>
+        <p><strong>Redes:</strong> <a href="#" class="link-secondary">LinkedIn</a> • <a href="#" class="link-secondary">GitHub</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <small>&copy; 2025 — Projeto acadêmico (Lucas Silva Borges • 1598846)</small>
+  </footer>
+
+  <!-- JS do projeto -->
+  <script src="assets/js/app.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
